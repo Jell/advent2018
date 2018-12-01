@@ -53,6 +53,19 @@ cd in_idris
 make
 ```
 
+## Racket
+
+Dependencies:
+
+ * Racket https://racket-lang.org/
+
+Run:
+
+```
+cd in_racket
+make
+```
+
 ## Ruby
 
 Dependencies:
