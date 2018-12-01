@@ -1,10 +1,10 @@
 .DEFAULT_GOAL := all
 
-GO_FILES := $(wildcard ./**/*.go)
+MAIN_FILES := $(wildcard ./**/main.go)
 
-.PHONY: $(GO_FILES)
+.PHONY: $(MAIN_FILES)
 
-$(GO_FILES):
+$(MAIN_FILES):
 	go run $@
 
-all: $(GO_FILES)
+all: $(MAIN_FILES)

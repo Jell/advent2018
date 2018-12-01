@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/Jell/advent2018/go/Utils"
 )
 
 func Part_1() {
@@ -13,6 +14,7 @@ func Part_2() {
 }
 
 func main() {
+	Utils.Hello()
 	Part_1()
 	Part_2()
 }
