@@ -1,7 +1,7 @@
 package main
 
 import(
-	"advent2018/Day_01"
+	"github.com/Jell/advent2018/go/Day_01"
 )
 
 func main() {
