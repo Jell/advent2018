@@ -16,7 +16,7 @@ func Check(err error) {
 
 // ReadFile ...
 func ReadFile(path string) string {
-	raw, err := ioutil.ReadFile("../../inputs/day01.txt")
+	raw, err := ioutil.ReadFile(path)
 	Check(err)
 	return string(raw)
 }
