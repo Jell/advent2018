@@ -1,16 +1,39 @@
 # Advent of Code 2018
 
-## TypeScript
+## Haskell
+
+Dependencies:
+
+ * Stack https://docs.haskellstack.org/en/stable/README/
+
+Run:
 
 ```
-yarn install
+cd haskell
+make
+```
+
+## TypeScript
+
+Dependencies:
+
+ * Yarn https://yarnpkg.com/en/
+
+Run:
+
+```
 cd typescript
+yarn install
 make
 ```
 
 ## Go
 
-To run the whole calendar:
+Dependencies:
+
+ * Go https://golang.org/doc/install
+
+Run:
 
 ```
 go get -u git@github.com:Jell/advent2018.git
