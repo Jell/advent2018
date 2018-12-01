@@ -22,7 +22,7 @@ Dependencies:
 Run:
 
 ```
-go get -u git@github.com:Jell/advent2018.git
+go get -u github.com/Jell/advent2018
 cd in_go
 make
 ```
