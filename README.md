@@ -1,5 +1,18 @@
 # Advent of Code 2018
 
+## Clojure
+
+Dependecies:
+
+ * Clojure binary https://clojure.org/guides/getting_started
+
+Run:
+
+```
+cd clojure
+make
+```
+
 ## Idris
 
 Dependencies:
