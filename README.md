@@ -1,18 +1,5 @@
 # Advent of Code 2018
 
-## Ruby
-
-Dependencies:
-
- * Ruby https://www.ruby-lang.org/en/
-
-Run:
-
-```
-cd ruby
-make
-```
-
 ## Clojure
 
 Dependencies:
@@ -22,47 +9,7 @@ Dependencies:
 Run:
 
 ```
-cd clojure
-make
-```
-
-## Idris
-
-Dependencies:
-
- * Idris https://www.idris-lang.org/download/
-
-Run:
-
-```
-cd idris
-make
-```
-
-## Haskell
-
-Dependencies:
-
- * Stack https://docs.haskellstack.org/en/stable/README/
-
-Run:
-
-```
-cd haskell
-make
-```
-
-## TypeScript
-
-Dependencies:
-
- * Yarn https://yarnpkg.com/en/
-
-Run:
-
-```
-cd typescript
-yarn install
+cd in_clojure
 make
 ```
 
@@ -76,6 +23,59 @@ Run:
 
 ```
 go get -u git@github.com:Jell/advent2018.git
-cd go
+cd in_go
+make
+```
+
+## Haskell
+
+Dependencies:
+
+ * Stack https://docs.haskellstack.org/en/stable/README/
+
+Run:
+
+```
+cd in_haskell
+make
+```
+
+## Idris
+
+Dependencies:
+
+ * Idris https://www.idris-lang.org/download/
+
+Run:
+
+```
+cd in_idris
+make
+```
+
+## Ruby
+
+Dependencies:
+
+ * Ruby https://www.ruby-lang.org/en/
+
+Run:
+
+```
+cd in_ruby
+make
+```
+
+## TypeScript
+
+Dependencies:
+
+ * Yarn https://yarnpkg.com/en/
+
+Run:
+
+```
+cd in_typescript
+yarn install
 make
 ```

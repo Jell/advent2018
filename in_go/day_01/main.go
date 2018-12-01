@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/Jell/advent2018/go/utils"
+	"github.com/Jell/advent2018/in_go/utils"
 )
 
 func part1() {
