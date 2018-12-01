@@ -1,5 +1,13 @@
 # Advent of Code 2018
 
+## TypeScript
+
+```
+yarn install
+cd typescript
+make
+```
+
 ## Go
 
 To run the whole calendar:
