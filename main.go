@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	fmt.Printf("https://github.com/Jell/advent2018/blob/master/README.md")
+	fmt.Printf("Check this: https://github.com/Jell/advent2018/blob/master/README.md")
 }
