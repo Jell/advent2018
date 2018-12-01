@@ -27,9 +27,14 @@ func ReadLines(path string) []string {
 	return lines[:len(lines)-1]
 }
 
-// ParseInt ...
-func ParseInt(input string) int {
+// StrToInt ...
+func StrToInt(input string) int {
 	i, err := strconv.Atoi(input)
 	Check(err)
 	return i
+}
+
+// IntToStr ...
+func IntToStr(input int) string {
+	return strconv.FormatInt(int64(input), 10)
 }
