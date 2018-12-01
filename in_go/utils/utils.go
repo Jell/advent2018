@@ -1,10 +1,11 @@
 package utils
 
-import (
-	"fmt"
-)
+import ()
 
-// Hello ...
-func Hello() {
-	fmt.Printf("Hello!\n")
+// Check ...
+// panic if error
+func Check(err error) {
+	if err != nil {
+		panic(err)
+	}
 }
