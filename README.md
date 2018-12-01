@@ -1,8 +1,21 @@
 # Advent of Code 2018
 
+## Ruby
+
+Dependencies:
+
+ * Ruby https://www.ruby-lang.org/en/
+
+Run:
+
+```
+cd ruby
+make
+```
+
 ## Clojure
 
-Dependecies:
+Dependencies:
 
  * Clojure binary https://clojure.org/guides/getting_started
 
