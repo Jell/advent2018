@@ -26,15 +26,15 @@ func part1(diffs []int) {
 func part2(diffs []int) {
 	var freq int
 	var found bool
-	var seen = map[string]bool{}
+	var seen = map[int]bool{}
 	for !found {
 		for _, i := range diffs {
 			freq = freq + i
-			found = seen[utils.IntToStr(freq)]
+			found = seen[freq]
 			if found {
 				break
 			}
-			seen[utils.IntToStr(freq)] = true
+			seen[freq] = true
 		}
 	}
 	fmt.Print("Day 1 - part 2: ", freq, "\n")
