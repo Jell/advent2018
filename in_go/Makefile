@@ -5,6 +5,6 @@ MAIN_FILES := $(wildcard ./**/main.go)
 .PHONY: $(MAIN_FILES)
 
 $(MAIN_FILES):
-	go run $@
+	cd $(dir $@) && go run $(notdir $@)
 
 all: $(MAIN_FILES)
