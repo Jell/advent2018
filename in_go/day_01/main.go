@@ -10,7 +10,7 @@ func input() []int {
 
 	var diffs []int
 	for _, line := range lines {
-		diffs = append(diffs, utils.ParseInt(line))
+		diffs = append(diffs, utils.StrToInt(line))
 	}
 	return diffs
 }
@@ -24,12 +24,17 @@ func part1(diffs []int) {
 }
 
 func part2(diffs []int) {
-	var freq = 0
-	var seen = map[int]bool{}
-	for !seen[freq] {
+	var freq int
+	var found bool
+	var seen = map[string]bool{}
+	for !found {
 		for _, i := range diffs {
-			seen[freq] = true
-			freq += i
+			freq = freq + i
+			found = seen[utils.IntToStr(freq)]
+			if found {
+				break
+			}
+			seen[utils.IntToStr(freq)] = true
 		}
 	}
 	fmt.Print("Day 1 - part 2: ", freq, "\n")
