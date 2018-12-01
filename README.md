@@ -1,5 +1,18 @@
 # Advent of Code 2018
 
+## Idris
+
+Dependencies:
+
+ * Idris https://www.idris-lang.org/download/
+
+Run:
+
+```
+cd idris
+make
+```
+
 ## Haskell
 
 Dependencies:
