@@ -3,41 +3,31 @@ package main
 import (
 	"fmt"
 	"github.com/Jell/advent2018/in_go/utils"
-	"io/ioutil"
-	"strconv"
-	"strings"
 )
 
 func input() []int {
-	raw, err := ioutil.ReadFile("../../inputs/day01.txt")
-	utils.Check(err)
-
-	var lines = strings.Split(string(raw), "\n")
-	lines = lines[:len(lines)-1]
+	var lines = utils.ReadLines("../../inputs/day01.txt")
 
 	var diffs []int
 	for _, line := range lines {
-		i, err := strconv.Atoi(line)
-		utils.Check(err)
-		diffs = append(diffs, i)
+		diffs = append(diffs, utils.ParseInt(line))
 	}
 	return diffs
 }
-func part1() {
+
+func part1(diffs []int) {
 	var freq = 0
-	for _, i := range input() {
+	for _, i := range diffs {
 		freq = freq + i
 	}
 	fmt.Print("Day 1 - part 1: ", freq, "\n")
 }
 
-func part2() {
+func part2(diffs []int) {
 	var freq = 0
 	var seen = map[int]bool{}
-	var input = input()
-
 	for !seen[freq] {
-		for _, i := range input {
+		for _, i := range diffs {
 			seen[freq] = true
 			freq += i
 		}
@@ -46,6 +36,7 @@ func part2() {
 }
 
 func main() {
-	part1()
-	part2()
+	var diffs = input()
+	part1(diffs)
+	part2(diffs)
 }
