@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/Jell/advent2018/go/utils"
 )
 
 func part1() {
@@ -13,6 +15,7 @@ func part2() {
 }
 
 func main() {
+	utils.Hello()
 	part1()
 	part2()
 }
