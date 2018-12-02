@@ -2,10 +2,10 @@
 
 Progress:
 
-          |          |idris     |racket    |ruby      |typescript|clojure   |haskell   |go        |crystal   |          
-          |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |          
-          |Day 01    |⭐⭐        |          |⭐⭐        |⭐⭐        |⭐⭐        |          |⭐⭐        |⭐⭐        |          
-          |Day 02    |          |          |          |          |⭐⭐        |          |⭐         |          |          
+|          |idris     |racket    |ruby      |typescript|clojure   |haskell   |go        |crystal   |
+|:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |
+|Day 01    |⭐⭐        |          |⭐⭐        |⭐⭐        |⭐⭐        |          |⭐⭐        |⭐⭐        |
+|Day 02    |          |          |          |          |⭐⭐        |          |⭐         |          |
 
 
 ## Clojure
