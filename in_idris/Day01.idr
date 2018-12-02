@@ -1,14 +1,39 @@
 module Day01
-import FileProvider
+import Prelude.Stream
+import Data.SortedSet
 %default total
-%language TypeProviders
 
-%provide (inputString : String) with readString "Day01_input.txt"
+parseInput : String -> List Int
+parseInput = map cast . lines
+
+solve1 : List Int -> Int
+solve1 = foldl (+) 0
+
+partial
+subsolve2 : List Int -> List Int -> SortedSet Int -> Int -> Int
+subsolve2 origin [] seen freq = subsolve2 origin origin seen freq
+subsolve2 origin (i :: is) seen freq =
+  let freq' = i + freq
+  in if contains freq' seen
+     then freq'
+     else subsolve2 origin is (insert freq' seen) freq'
+
+partial
+solve2 : List Int -> Int
+solve2 input = subsolve2 input empty empty 0
 
 export
-part1 : Nat
-part1 = 1
+part1 : IO ()
+part1 = do
+  Right text <- readFile "../inputs/day01.txt"
+        | Left f => printLn f
+  putStr "Day 1 - part 1: "
+  printLn $ solve1 $ parseInput text
 
-export
-part2 : Nat
-part2 = 2
+export partial
+part2 : IO ()
+part2 = do
+  Right text <- readFile "../inputs/day01.txt"
+        | Left f => printLn f
+  putStr "Day 1 - part 2: "
+  printLn $ solve2 $ parseInput text
