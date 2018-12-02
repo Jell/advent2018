@@ -1,5 +1,13 @@
 # Advent of Code 2018
 
+Progress:
+
+          |          |idris     |racket    |ruby      |typescript|clojure   |haskell   |go        |crystal   |          
+          |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |          
+          |Day 01    |⭐⭐        |          |⭐⭐        |⭐⭐        |⭐⭐        |          |⭐⭐        |⭐⭐        |          
+          |Day 02    |          |          |          |          |⭐⭐        |          |⭐         |          |          
+
+
 ## Clojure
 
 Dependencies:
