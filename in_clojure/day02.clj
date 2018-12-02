@@ -35,13 +35,11 @@
             (subs row (inc i) c))))))
 
 (defn transpose [m]
-  (let [rows-count (count m)
-        columns-count (count (first m))]
-    (vec
-     (for [j (range columns-count)]
-       (vec
-        (for [i (range rows-count)]
-          (get-in m [i j])))))))
+  (vec
+   (for [j (range (count (first m)))]
+     (vec
+      (for [i (range (count m))]
+        (get-in m [i j]))))))
 
 (defn flip-find [e c]
   (find c e))
