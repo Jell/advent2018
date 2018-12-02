@@ -13,6 +13,19 @@ cd in_clojure
 make
 ```
 
+## Crystal
+
+Dependencies:
+
+ * Crystal https://crystal-lang.org/
+
+Run:
+
+```
+cd in_crystal
+make
+```
+
 ## Go
 
 Dependencies:
