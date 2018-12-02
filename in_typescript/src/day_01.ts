@@ -1,12 +1,27 @@
-module Day01 {
-    export function part_1(): string {
-        return "Day 1 - Part 1";
-    }
+import { readFileSync } from 'fs';
 
-    export function part_2(): string {
-        return "Day 1 - Part 2";
+let input: number[] = readFileSync('../inputs/day01.txt', "utf8").
+    split("\n").
+    map(i => parseInt(i)).
+    slice(0, -1);
+
+let part_1 = input.reduce((a, i) => a + i)
+console.log("Day 1 - part 1: ", part_1)
+
+var found = false;
+var freq: number = 0;
+var seen = new Set<number>([]);
+
+while (!found) {
+    for (let i of input) {
+        freq += i;
+        if (seen.has(freq)) {
+            found = true;
+            break;
+        } else {
+            seen.add(freq);
+        }
     }
 }
 
-console.log(Day01.part_1())
-console.log(Day01.part_2())
+console.log("Day 1 - part 2: ", freq)
