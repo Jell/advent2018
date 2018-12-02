@@ -37,7 +37,7 @@ func part1(rows []string) {
 			threes++
 		}
 	}
-	fmt.Println("Day 02 - Part 01: ", twos*threes)
+	fmt.Println("Day 02 - Part 1:", twos*threes)
 }
 
 func oneLessOptions(row string) []string {
@@ -67,7 +67,7 @@ func part2(rows []string) {
 			break
 		}
 	}
-	fmt.Println("Day 02 - Part 01: ", result)
+	fmt.Println("Day 02 - Part 1:", result)
 }
 
 func main() {

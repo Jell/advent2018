@@ -9,7 +9,7 @@
 
 (->> input
      (reduce +)
-     (println "Day 1 - Part 1: "))
+     (println "Day 01 - Part 1:"))
 
 (->> input
      (cycle)
@@ -19,4 +19,4 @@
                  (reduced new)
                  (conj seen new)))
              #{})
-     (println "Day 1 - Part 2: "))
+     (println "Day 01 - Part 2:"))

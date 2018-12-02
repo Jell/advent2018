@@ -21,7 +21,7 @@ func part1(diffs []int) {
 	for _, i := range diffs {
 		freq = freq + i
 	}
-	fmt.Println("Day 1 - part 1: ", freq)
+	fmt.Println("Day 01 - Part 1:", freq)
 }
 
 func part2(diffs []int) {
@@ -38,7 +38,7 @@ func part2(diffs []int) {
 			seen[freq] = true
 		}
 	}
-	fmt.Println("Day 1 - part 2: ", freq)
+	fmt.Println("Day 01 - Part 2:", freq)
 }
 
 func main() {

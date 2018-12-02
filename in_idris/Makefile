@@ -1,4 +1,4 @@
 .PHONY: run
 
 run:
-	idris Main.idr -o result && ./result
+	idris Main.idr -p contrib -o result && ./result

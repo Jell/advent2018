@@ -25,7 +25,7 @@
      (flip-select-keys #{2 3})
      (vals)
      (apply *)
-     (println "Day 2 - Part 1: "))
+     (println "Day 02 - Part 1:"))
 
 (defn one-less-options [row]
   (let [c (count row)]
@@ -57,4 +57,4 @@
      (mapv one-less-options)
      (transpose)
      (some paired-match)
-     (println "Day 2 - Part 2: "))
+     (println "Day 02 - Part 2:"))

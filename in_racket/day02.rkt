@@ -1,4 +1,4 @@
 #lang racket
 
-(println "Day 2 - part 1")
-(println "Day 2 - part 2")
+(displayln "Day 02 - Part 1")
+(displayln "Day 02 - Part 2")

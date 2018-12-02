@@ -6,7 +6,7 @@ let input: number[] = readFileSync('../inputs/day01.txt', "utf8").
     slice(0, -1);
 
 let part_1 = input.reduce((a, i) => a + i)
-console.log("Day 1 - part 1: ", part_1)
+console.log("Day 01 - Part 1:", part_1)
 
 var found = false;
 var freq: number = 0;
@@ -24,4 +24,4 @@ while (!found) {
     }
 }
 
-console.log("Day 1 - part 2: ", freq)
+console.log("Day 01 - Part 2:", freq)
