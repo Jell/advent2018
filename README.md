@@ -1,14 +1,21 @@
 # Advent of Code 2018
 
-Progress:
+## Progress:
 
 |          |clojure   |crystal   |go        |haskell   |idris     |racket    |ruby      |typescript|
 |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |
 |Day 01    |⭐⭐        |⭐⭐        |⭐⭐        |          |⭐⭐        |          |⭐⭐        |⭐⭐        |
 |Day 02    |⭐⭐        |          |⭐⭐        |          |          |          |          |          |
 
+To update this report:
 
-## Clojure
+```
+make
+```
+
+## Languages
+
+### Clojure
 
 Dependencies:
 
@@ -21,7 +28,7 @@ cd in_clojure
 make
 ```
 
-## Crystal
+### Crystal
 
 Dependencies:
 
@@ -34,7 +41,7 @@ cd in_crystal
 make
 ```
 
-## Go
+### Go
 
 Dependencies:
 
@@ -48,7 +55,7 @@ cd in_go
 make
 ```
 
-## Haskell
+### Haskell
 
 Dependencies:
 
@@ -61,7 +68,7 @@ cd in_haskell
 make
 ```
 
-## Idris
+### Idris
 
 Dependencies:
 
@@ -74,7 +81,7 @@ cd in_idris
 make
 ```
 
-## Racket
+### Racket
 
 Dependencies:
 
@@ -87,7 +94,7 @@ cd in_racket
 make
 ```
 
-## Ruby
+### Ruby
 
 Dependencies:
 
@@ -100,7 +107,7 @@ cd in_ruby
 make
 ```
 
-## TypeScript
+### TypeScript
 
 Dependencies:
 
