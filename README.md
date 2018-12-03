@@ -2,7 +2,7 @@
 
 |          |clojure   |crystal   |go        |haskell   |idris     |racket    |ruby      |typescript|
 |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |
-|Day 01    |⭐⭐        |⭐⭐        |⭐⭐        |          |⭐⭐        |          |⭐⭐        |⭐⭐        |
+|Day 01    |⭐⭐        |⭐⭐        |⭐⭐        |          |⭐⭐        |⭐         |⭐⭐        |⭐⭐        |
 |Day 02    |⭐⭐        |          |⭐⭐        |          |          |          |          |          |
 
 ## Languages
