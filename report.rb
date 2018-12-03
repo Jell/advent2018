@@ -8,34 +8,38 @@ solutions = {
 }
 
 results = {}
-langs.map do |lang|
+langs.each do |lang|
+  puts "## #{lang}"
   results[lang] = `cd in_#{lang} && make 2> /dev/null`
+  puts results[lang]
 end
 
-star = "⭐"
-
 table = [
-  ["", ""] + langs + [""],
-  [""] + [":---:"] * (langs.count + 1) + [""]
+  [""] + langs,
+  [":---:"] * (langs.count + 1)
 ] + solutions.map do |day, parts|
-  ["", day] + langs.map do |lang|
+  [day] + langs.map do |lang|
     if results[lang].include?("#{day} - Part 1: #{parts.fetch(:part1)}")
-      star
+      "*"
     else
       ""
     end +
     if results[lang].include?("#{day} - Part 2: #{parts.fetch(:part2)}")
-      star
+      "*"
     else
       ""
     end
-  end + [""]
+  end
 end
 
-report = table.map { |line| line.map { |c| c.ljust(10) }.join("|") }.join("\n")
+report = table.map { |line| "|" + line.map { |c| c.ljust(10) }.join("|") + "|" }.join("\n")
 
+puts ""
+puts ""
+puts "Progress:"
+puts ""
 puts report
 
 readme = File.read("README.md")
-readme[/\s{10}\|.*\|/m] = report
+readme[/\|.*\|/m] = report.tr("*","⭐")
 File.write("README.md", readme)
