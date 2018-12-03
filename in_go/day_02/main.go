@@ -67,7 +67,7 @@ func part2(rows []string) {
 			break
 		}
 	}
-	fmt.Println("Day 02 - Part 1:", result)
+	fmt.Println("Day 02 - Part 2:", result)
 }
 
 func main() {
