@@ -1,6 +1,6 @@
 # Advent of Code 2018
 
-## Progress:
+### Progress:
 
 |          |clojure   |crystal   |go        |haskell   |idris     |racket    |ruby      |typescript|
 |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |
