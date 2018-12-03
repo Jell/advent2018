@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-langs = Dir.glob('in_*').map { |d| d.gsub("in_", "") }
+langs = Dir.glob('in_*').map { |d| d.gsub("in_", "") }.sort
 
 solutions = {
   "Day 01" => { part1: "599", part2: "81204" },
