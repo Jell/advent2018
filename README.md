@@ -1,19 +1,17 @@
 # Advent of Code 2018
 
-### Progress:
-
 |          |clojure   |crystal   |go        |haskell   |idris     |racket    |ruby      |typescript|
 |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |
 |Day 01    |⭐⭐        |⭐⭐        |⭐⭐        |          |⭐⭐        |          |⭐⭐        |⭐⭐        |
 |Day 02    |⭐⭐        |          |⭐⭐        |          |          |          |          |          |
 
-To update this report:
+## Languages
+
+To update report:
 
 ```
 make
 ```
-
-## Languages
 
 ### Clojure
 
