@@ -3,11 +3,11 @@ input = File.read("../inputs/day04.txt").lines.sort
 shifts = {}
 
 input.slice_before(/Guard/).each do |shift|
-  shift.shift =~ /Guard #(\d+)/
+  shift.first =~ /Guard #(\d+)/
   guard = $1.to_i
 
   shifts[guard] ||= []
-  shifts[guard] += shift.map { |line|
+  shifts[guard] += shift.drop(1).map { |line|
     line =~ /:(\d\d)\]/
     $1.to_i
   }.each_slice(2).flat_map { |(start, ending)|
