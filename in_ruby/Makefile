@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := all
 
-MAIN_FILES := $(wildcard ./*.rb)
+MAIN_FILES := $(wildcard ./day*.rb)
 
 .PHONY: $(MAIN_FILES)
 
