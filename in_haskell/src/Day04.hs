@@ -8,29 +8,24 @@ import Control.Category ((>>>))
 loadInput :: IO (String)
 loadInput = unlines <$> sort <$> lines <$> readFile "../inputs/day04.txt"
 
+integer :: GenParser Char str Int
+integer = read <$> many digit
+
 parseMinute :: GenParser Char str Int
-parseMinute = do
-  char '['
-  many digit
-  char '-'
-  many digit
-  char '-'
-  many digit
-  char ' '
-  many digit
-  char ':'
-  minute <- many alphaNum
-  char ']'
-  pure $ read minute
+parseMinute = char '['
+           *> integer
+           *> char '-'
+           *> integer
+           *> char '-'
+           *> integer
+           *> char ' '
+           *> integer
+           *> char ':'
+           *> integer
+           <* char ']'
 
 parseGuard :: GenParser Char str Int
-parseGuard = do
-  parseMinute
-  string " Guard #"
-  guardId <- many digit
-  string " begins shift"
-  char '\n'
-  pure $ read guardId
+parseGuard = parseMinute *> string " Guard #" *> integer <* string " begins shift" <* char '\n'
 
 parseNap :: GenParser Char str [Int]
 parseNap = do
