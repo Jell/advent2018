@@ -8,6 +8,7 @@ solutions = {
   "Day 03" => { part1: "118223", part2: "412" },
   "Day 04" => { part1: "103720", part2: "110913" },
   "Day 05" => { part1: "9462", part2: "4952" },
+  "Day 06" => { part1: "3722", part2: "44634" },
 }
 
 results = {}
