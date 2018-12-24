@@ -1,0 +1,9 @@
+strict digraph Day07 {
+        A -> B
+        A -> D
+        B -> E
+        C -> A
+        C -> F
+        D -> E
+        F -> E
+}

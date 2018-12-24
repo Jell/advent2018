@@ -1,2 +1,3 @@
 node_modules/
 *.ibc
+/.DS_Store

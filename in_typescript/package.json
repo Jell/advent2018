@@ -4,16 +4,9 @@
     "@types/node": "^7.0.5"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.5",
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "nodemon": "^1.18.5",
     "ts-node": "^7.0.1"
   },
   "scripts": {
-    "tsc": "tsc",
-    "ts-test": "mocha -r ts-node/register typescript/**/*_test.ts",
-    "ts-autotest": "mocha -w --watch-extensions ts -r ts-node/register typescript/**/*_test.ts"
+    "tsc": "tsc"
   }
 }
