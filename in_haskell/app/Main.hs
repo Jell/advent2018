@@ -3,6 +3,7 @@ module Main where
 import qualified Day01
 import qualified Day04
 import qualified Day08
+import qualified Day09
 
 main :: IO ()
 main = do
@@ -14,3 +15,6 @@ main = do
 
   Day08.part1
   Day08.part2
+
+  Day09.part1
+  Day09.part2
