@@ -15,7 +15,7 @@ treeParser = do
   nc <- integer
   char ' '
   nm <- integer
-  char ' '
+  char ' ' <|> char '\n'
   children <- count nc treeParser
   meta <- count nm (integer <* (char ' ' <|> char '\n'))
   return $ Node nc nm children meta
