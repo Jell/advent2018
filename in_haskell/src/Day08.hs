@@ -7,7 +7,7 @@ loadInput = readFile "../inputs/day08.txt"
 integer :: GenParser Char str Int
 integer = read <$> many digit
 
-data Tree = Node Int Int [Tree] [Int] | Empty
+data Tree = Node Int Int [Tree] [Int]
           deriving Show
 
 treeParser :: GenParser Char str Tree
@@ -21,14 +21,12 @@ treeParser = do
   return $ Node nc nm children meta
 
 parseTree :: String -> Tree
-parseTree = (either (const Empty) id <$> parse treeParser "")
+parseTree = (either (const (Node 0 0 [] [])) id <$> parse treeParser "")
 
 sumMeta :: Tree -> Int
-sumMeta Empty = 0
 sumMeta (Node _ _ children xs) = sum $ (xs <> (map sumMeta children))
 
 rootValue :: Tree -> Int
-rootValue Empty = 0
 rootValue (Node 0 _ _ xs) = sum xs
 rootValue (Node n _ children xs) = sum $ map subValue inrange
        where inrange = filter ((>=) n) xs
