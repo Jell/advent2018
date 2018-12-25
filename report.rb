@@ -11,6 +11,7 @@ solutions = {
   "Day 06" => { part1: "3722", part2: "44634" },
   "Day 07" => { part1: "OCPUEFIXHRGWDZABTQJYMNKVSL", part2: "992" },
   "Day 08" => { part1: "44893", part2: "27433" },
+  "Day 09" => { part1: "402398", part2: "3426843186" },
 }
 
 results = {}
