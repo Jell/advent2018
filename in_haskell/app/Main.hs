@@ -5,6 +5,7 @@ import qualified Day04
 import qualified Day08
 import qualified Day09
 import qualified Day10
+import qualified Day11
 
 main :: IO ()
 main = do
@@ -21,3 +22,7 @@ main = do
   Day09.part2
 
   Day10.part1and2
+
+  Day11.part1
+  -- too slow!
+  -- Day11.part2
