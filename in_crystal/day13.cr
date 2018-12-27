@@ -1,5 +1,3 @@
-input = File.read("../inputs/day13.txt").lines
-
 enum Crossing
   Left
   Straight
@@ -13,34 +11,35 @@ def crossings
   [Crossing::Left, Crossing::Straight, Crossing::Right].cycle
 end
 
-init_trains = [] of Train
+def init
+  input = File.read("../inputs/day13.txt").lines
 
-colors = [31,32,33,34,35,36,37,90,91,92,93,94,95,96].shuffle.cycle
+  init_trains = [] of Train
 
-circuit = input.each_with_index.map do |(line, y)|
-  line.chars.each_with_index.map do |(c, x)|
-    case c
-    when '>'
-      init_trains << {x, y, 1, 0, crossings, [{x,y}], colors.next.to_s}
-      '-'
-    when '<'
-      init_trains << {x, y, -1, 0, crossings, [{x,y}], colors.next.to_s}
-      '-'
-    when 'v'
-      init_trains << {x, y, 0, 1, crossings, [{x,y}], colors.next.to_s}
-      '|'
-    when '^'
-      init_trains << {x, y, 0, -1, crossings, [{x,y}], colors.next.to_s}
-      '|'
-    else c
-    end
+  colors = [31,32,33,34,35,36,37,90,91,92,93,94,95,96].shuffle.cycle
+
+
+  circuit = input.each_with_index.map do |(line, y)|
+    line.chars.each_with_index.map do |(c, x)|
+      case c
+      when '>'
+        init_trains << {x, y, 1, 0, crossings, [{x,y}], colors.next.to_s}
+        '-'
+      when '<'
+        init_trains << {x, y, -1, 0, crossings, [{x,y}], colors.next.to_s}
+        '-'
+      when 'v'
+        init_trains << {x, y, 0, 1, crossings, [{x,y}], colors.next.to_s}
+        '|'
+      when '^'
+        init_trains << {x, y, 0, -1, crossings, [{x,y}], colors.next.to_s}
+        '|'
+      else c
+      end
+    end.to_a
   end.to_a
-end.to_a
 
-class Any
-  def self.===(other)
-    true
-  end
+  {circuit, init_trains}
 end
 
 def render (circuit, trains, with_trace = false)
@@ -59,8 +58,10 @@ def render (circuit, trains, with_trace = false)
         end
     end
 
-    trace.each do |x, y|
-      state[y][x] = "\e[#{color}m#{state[y][x]}\e[39m"
+    if with_trace
+      trace.each do |x, y|
+        state[y][x] = "\e[#{color}m#{state[y][x]}\e[39m"
+      end
     end
   end
   state.map { |l| l.join("") }.join("\n")
@@ -146,11 +147,12 @@ def crash_location (trains)
   trains.group_by {|x,y,_,_,_,_,_| {x, y}}.select { |k, v| v.size > 1 }
 end
 
-# puts render(circuit, init_trains)
 
-trains = init_trains.dup
+circuit, trains = init
+# puts render(circuit, trains)
 
 loop do
+  trains.sort_by! {|t| [t[1], t[0]]}
   trains.each_with_index {|t, i|
     trains[i] = move(circuit, t)
     break if crash?(trains)
@@ -163,3 +165,34 @@ end
 crash_x, crash_y = crash_location(trains).keys.first
 
 puts "Day 01 - Part 1: #{crash_x},#{crash_y}"
+
+circuit, trains = init
+
+trains = Array(Train | Nil).new(trains.size) {|i| trains[i] }.shuffle
+
+loop do
+  trains.sort_by! {|t| t ? [t[1], t[0]] : [0,0]}
+
+  (0 ... trains.size).each do |i|
+    t = trains[i]
+    if t
+      new_t = move(circuit, t)
+      trains[i] = new_t
+      if crash?(trains.compact)
+        (0 ... trains.size).each do |i2|
+          t2 = trains[i2]
+          if t2 && t2[0] == new_t[0] && t2[1] == new_t[1]
+            trains[i2] = nil
+          end
+        end
+      end
+    end
+  end
+  trains.compact!
+
+  break if trains.size == 1
+end
+
+last_train = trains.compact.first
+
+puts "Day 01 - Part 2: #{last_train[0]},#{last_train[1]}"
