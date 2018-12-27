@@ -13,7 +13,7 @@ def crossings
   [Crossing::Left, Crossing::Straight, Crossing::Right].cycle
 end
 
-trains = [] of Train
+init_trains = [] of Train
 
 colors = [31,32,33,34,35,36,37,90,91,92,93,94,95,96].shuffle.cycle
 
@@ -21,16 +21,16 @@ circuit = input.each_with_index.map do |(line, y)|
   line.chars.each_with_index.map do |(c, x)|
     case c
     when '>'
-      trains << {x, y, 1, 0, crossings, [{x,y}], colors.next.to_s}
+      init_trains << {x, y, 1, 0, crossings, [{x,y}], colors.next.to_s}
       '-'
     when '<'
-      trains << {x, y, -1, 0, crossings, [{x,y}], colors.next.to_s}
+      init_trains << {x, y, -1, 0, crossings, [{x,y}], colors.next.to_s}
       '-'
     when 'v'
-      trains << {x, y, 0, 1, crossings, [{x,y}], colors.next.to_s}
+      init_trains << {x, y, 0, 1, crossings, [{x,y}], colors.next.to_s}
       '|'
     when '^'
-      trains << {x, y, 0, -1, crossings, [{x,y}], colors.next.to_s}
+      init_trains << {x, y, 0, -1, crossings, [{x,y}], colors.next.to_s}
       '|'
     else c
     end
@@ -146,7 +146,9 @@ def crash_location (trains)
   trains.group_by {|x,y,_,_,_,_,_| {x, y}}.select { |k, v| v.size > 1 }
 end
 
-puts render(circuit, trains)
+# puts render(circuit, init_trains)
+
+trains = init_trains.dup
 
 loop do
   trains.each_with_index {|t, i|
@@ -156,10 +158,7 @@ loop do
   break if crash?(trains)
 end
 
-puts render(circuit, crash_location(trains).values.first)
-
-puts trains.size
-puts crash_location(trains)
+# puts render(circuit, crash_location(trains).values.first)
 
 crash_x, crash_y = crash_location(trains).keys.first
 
