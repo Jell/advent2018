@@ -164,7 +164,7 @@ end
 
 crash_x, crash_y = crash_location(trains).keys.first
 
-puts "Day 01 - Part 1: #{crash_x},#{crash_y}"
+puts "Day 13 - Part 1: #{crash_x},#{crash_y}"
 
 circuit, trains = init
 
@@ -195,4 +195,4 @@ end
 
 last_train = trains.compact.first
 
-puts "Day 01 - Part 2: #{last_train[0]},#{last_train[1]}"
+puts "Day 13 - Part 2: #{last_train[0]},#{last_train[1]}"
