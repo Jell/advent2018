@@ -88,7 +88,7 @@ class Day15
         {x, y + 1},
       ].each do |coord|
         if is_there?(kind, coord)
-          other_path = search(kind, paths)
+          other_path = search(kind, paths.select {|p| p.size < path.size })
           if other_path.size == path.size && other_path.last.reverse < path.last.reverse
             return other_path
           else
