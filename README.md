@@ -18,6 +18,14 @@
 |Day 14    |⭐⭐        |⭐⭐        |          |          |          |          |          |          |
 |Day 15    |          |⭐⭐        |          |          |          |          |          |          |
 
+
+## Videos
+
+<video controls="controls" width="800" height="600" name="Goblins">
+  <source src="https://raw.githubusercontent.com/Jell/advent2018/master/recordings/goblins.mov" type="video/mp4">
+</video>
+
+
 ## Languages
 
 To update report:
