@@ -16,7 +16,7 @@ def init
 
   init_trains = [] of Train
 
-  colors = [31,32,33,34,35,36,37,90,91,92,93,94,95,96].shuffle.cycle
+  colors = [31,32,33,34,35,36,37,91,92,93,94,95,96].shuffle.cycle
 
 
   circuit = input.each_with_index.map do |(line, y)|
@@ -59,12 +59,12 @@ def render (circuit, trains, with_trace = false)
     end
 
     if with_trace
-      trace.each do |x, y|
-        state[y][x] = "\e[#{color}m#{state[y][x]}\e[39m"
+      trace.last(100).each do |x, y|
+        state[y][x] = "\e[#{color}m#{state[y][x]}\e[90m"
       end
     end
   end
-  state.map { |l| l.join("") }.join("\n")
+  "\n"*3 + "\e[90m" + state.map { |l| l.join("") }.join("\n") + "\e[39m" +"\033[;H"
 end
 
 def move (circuit, train)
@@ -136,7 +136,7 @@ def move (circuit, train)
       else raise "error: #{ {circuit[y][x],x,y,dx,dy} }"
       end
 
-  {x, y, dx, dy, cs, trace, color}
+  {x, y, dx, dy, cs, trace.last(100), color}
 end
 
 def crash? (trains)
@@ -170,6 +170,9 @@ circuit, trains = init
 
 trains = Array(Train | Nil).new(trains.size) {|i| trains[i] }.shuffle
 
+# puts "\033c"
+# puts "\u001B[?25l"
+
 loop do
   trains.sort_by! {|t| t ? [t[1], t[0]] : [0,0]}
 
@@ -189,6 +192,8 @@ loop do
     end
   end
   trains.compact!
+
+  # puts render(circuit, trains.compact, with_trace: true)
 
   break if trains.size == 1
 end
