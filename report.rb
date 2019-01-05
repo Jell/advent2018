@@ -31,6 +31,7 @@ solutions = {
   "Day 14" => { part1: "2111113678", part2: "20195114" },
   "Day 15" => { part1: "217890", part2: "43645" },
   "Day 16" => { part1: "517", part2: "667" },
+  "Day 17" => { part1: "31861", part2: "26030" },
 }
 
 results = {}
