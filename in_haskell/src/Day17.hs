@@ -1,7 +1,7 @@
 module Day17 (part1, part2) where
 import Control.Applicative ((<|>))
 import Text.ParserCombinators.Parsec (GenParser, many, digit, string, char, parse)
-import Data.Set as Set (Set, fromList, unions, union, empty, toList, member, filter)
+import Data.Set as Set (Set, fromList, unions, union, empty, toList, member, filter, (\\), null)
 import Codec.Picture (generateImage, writePng, PixelRGB8(..))
 import Data.Tuple (swap)
 import Data.List (sort)
@@ -121,17 +121,29 @@ stepFill boundaries@(xMin,xMax,yMin,yMax) height walls starts
     where result = Set.unions $! map (Set.fromList . (fill (xMin, xMax, yMin, (min height yMax)) walls)) starts
           newStarts = toList $! Set.filter (\(x,y) -> (y == height) && (not (member (x,y+1) walls))) result
 
-
 part1 :: IO ()
 part1 = do
   walls <- parseInput <$> loadInput
   let boundaries@(xMin, xMax, yMin, yMax) = getBoundaries walls
   let water = Set.filter (\(x, y) -> y >= yMin) $ stepFill boundaries 200 walls [(500, 0)]
   render "day17_part1.png" boundaries walls water
-  -- render "test.png" boundaries walls (Set.fromList $ stuckVert ++ stuckHoriz2)
   putStr "Day 17 - Part 1: "
   putStrLn $ show $ length water
 
+cutTheSource :: Set Coord -> Set Coord -> Set Coord
+cutTheSource walls water = if Set.null uncontained
+                           then water
+                           else cutTheSource walls (water \\ uncontained)
+    where wallOrWater = Set.union walls water
+          uncontained = Set.filter (\(x,y) -> not ((member (x-1, y) wallOrWater) &&
+                                                   (member (x+1,y) wallOrWater) &&
+                                                   (member (x,y+1) wallOrWater))) water
 part2 :: IO ()
 part2 = do
-  putStrLn "Day 17 - Part 2: "
+  walls <- parseInput <$> loadInput
+  let boundaries@(xMin, xMax, yMin, yMax) = getBoundaries walls
+  let water = Set.filter (\(x, y) -> y >= yMin) $ stepFill boundaries 200 walls [(500, 0)]
+  let atRest = cutTheSource walls water
+  render "day17_part2.png" boundaries walls atRest
+  putStr "Day 17 - Part 2: "
+  putStrLn $ show $ length atRest
