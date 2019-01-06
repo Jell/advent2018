@@ -32,6 +32,7 @@ solutions = {
   "Day 15" => { part1: "217890", part2: "43645" },
   "Day 16" => { part1: "517", part2: "667" },
   "Day 17" => { part1: "31861", part2: "26030" },
+  "Day 18" => { part1: "466125", part2: "207998" },
 }
 
 results = {}

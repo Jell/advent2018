@@ -51,7 +51,7 @@
 (def part-1
   (score after-10-min))
 
-(println "Day 14 - Part 1:" part-1)
+(println "Day 18 - Part 1:" part-1)
 
 (def first-loop
   (loop [i 0 b input indices {input 0}]
@@ -72,4 +72,4 @@
          (mod (- long-time start)
               (- end start)))))))
 
-(println "Day 14 - Part 2:" part-2)
+(println "Day 18 - Part 2:" part-2)
